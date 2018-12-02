@@ -2,3 +2,4 @@
 *.js.map
 *.d.ts
 src/**/*.js
+node_modules
