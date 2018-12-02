@@ -1,0 +1,24 @@
+{
+  "name": "composable-react-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.7.10",
+    "@types/react-dom": "^16.0.11",
+    "react": "^16.6.3",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.1"
+  }
+}
