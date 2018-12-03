@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {VirtualScrollInfo, useVirtualScroll} from './hooks';
+import styled from 'styled-components'
+import {VirtualScrollInfo, useVirtualScroll} from './virtualScroll';
 
 type TableProps<T extends object> = {
     rows: T[];
@@ -8,11 +9,18 @@ type TableProps<T extends object> = {
 
 const TableContext = React.createContext<TableProps<any>>({rows: [], columns: []});
 
+const TableContainer = styled.div`
+    
+`;
+
 class Table extends React.Component {
     render() {
         return null;
     }
 }
+
+
+
 
 
 class TableHead extends React.Component {
@@ -30,8 +38,8 @@ const {floor, min} = Math;
 const TBody = React.memo<TBodyProps>((props: any) => {
     const {rowHeight, children, maxHeight} = props as TBodyProps;
     const {rows, columns} = React.useContext(TableContext);
-    const rowsLength = rows.length;
-    const {virtualScrollState, onScroll} = useVirtualScroll({rowsLength, rowHeight, maxHeight});
+    const rowCount = rows.length;
+    const {virtualScrollState, onScroll} = useVirtualScroll({rowCount, rowHeight, maxHeight});
     const {paddingTop, from, to, paddingBottom} = virtualScrollState;
     const visibleRows = [];
     for(let i = from; i<=to; i++){
@@ -42,7 +50,6 @@ const TBody = React.memo<TBodyProps>((props: any) => {
             {visibleRows}
         </div>
     )
-    return props.children();
 });
 
 
