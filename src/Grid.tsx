@@ -22,7 +22,7 @@ export const Grid =  memo(function({columns, className, children, ...rest}: Grid
 
     return (
         <div className={addClass(CLASSES.GRID, className)} ref={divRef} {...rest}>
-            <style ref={styleRef} />s
+            <style ref={styleRef} />
             <GridContext.Provider value={observable}>
                 {children}
                 <div
